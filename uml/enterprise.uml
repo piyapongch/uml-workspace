@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xmi:id="_wshygLJJEeOUz4eVkmcyQw" name="Enterprise">
+  <ownedComment xmi:id="_te9N0rJKEeOUz4eVkmcyQw">
+    <body>Openstack REST API </body>
+  </ownedComment>
+  <ownedComment xmi:id="_th-FkLJKEeOUz4eVkmcyQw" annotatedElement="_tim-wrJKEeOUz4eVkmcyQw">
+    <body>monitor study data changes and automatically ingest to Fedora</body>
+  </ownedComment>
+  <ownedComment xmi:id="_td1zgbJKEeOUz4eVkmcyQw" annotatedElement="_td1McLJKEeOUz4eVkmcyQw">
+    <body>OJS Dataverse Plugin using SWORD2</body>
+  </ownedComment>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_td1McLJKEeOUz4eVkmcyQw" name="">
+    <ownedComment xmi:id="_td1zgLJKEeOUz4eVkmcyQw">
+      <body>OJS Dataverse Plugin</body>
+    </ownedComment>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Component" xmi:id="_tfG-0LJKEeOUz4eVkmcyQw" clientDependency="_tfG-0bJKEeOUz4eVkmcyQw" name="OpenStack Swift"/>
+  <packagedElement xmi:type="uml:Component" xmi:id="_thWagLJKEeOUz4eVkmcyQw" clientDependency="_th3X4LJKEeOUz4eVkmcyQw" name="OJS">
+    <ownedAttribute xmi:type="uml:Port" xmi:id="_thWagbJKEeOUz4eVkmcyQw" name="OJSPort" type="_thWagLJKEeOUz4eVkmcyQw"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_th07oLJKEeOUz4eVkmcyQw" name="&lt;&lt;dependency>>" client="_tim-wrJKEeOUz4eVkmcyQw" supplier="_tid00LJKEeOUz4eVkmcyQw"/>
+  <packagedElement xmi:type="uml:InterfaceRealization" xmi:id="_tfG-0bJKEeOUz4eVkmcyQw" name="OpenStack SwiftToInterface2" client="_tfG-0LJKEeOUz4eVkmcyQw"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_th3X4LJKEeOUz4eVkmcyQw" name="Interface2ToOJS" client="_thWagLJKEeOUz4eVkmcyQw" supplier="_td1McLJKEeOUz4eVkmcyQw"/>
+  <packagedElement xmi:type="uml:Component" xmi:id="_tid00LJKEeOUz4eVkmcyQw" clientDependency="_tid00rJKEeOUz4eVkmcyQw _tid007JKEeOUz4eVkmcyQw" name="Dataverse">
+    <ownedAttribute xmi:type="uml:Port" xmi:id="_tid00bJKEeOUz4eVkmcyQw" name="DataversePort" type="_tid00LJKEeOUz4eVkmcyQw"/>
+    <interfaceRealization xmi:id="_tid00rJKEeOUz4eVkmcyQw" name="DataverseToInterface1" client="_tid00LJKEeOUz4eVkmcyQw"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Component" xmi:id="_tim-wLJKEeOUz4eVkmcyQw" name="Enterprise Integrator">
+    <ownedAttribute xmi:type="uml:Port" xmi:id="_tim-wbJKEeOUz4eVkmcyQw" name="Enterprise IntegratorPort" type="_tim-wLJKEeOUz4eVkmcyQw"/>
+    <packagedElement xmi:type="uml:Component" xmi:id="_tim-wrJKEeOUz4eVkmcyQw" clientDependency="_th07oLJKEeOUz4eVkmcyQw" name="Dataverse Ingestor"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:InterfaceRealization" xmi:id="_tid007JKEeOUz4eVkmcyQw" name="DataverseToInterface2" client="_tid00LJKEeOUz4eVkmcyQw" supplier="_td1McLJKEeOUz4eVkmcyQw" contract="_td1McLJKEeOUz4eVkmcyQw"/>
+  <packagedElement xmi:type="uml:Component" xmi:id="_tjXMsLJKEeOUz4eVkmcyQw" name="Dataverse Fedora4"/>
+</uml:Model>

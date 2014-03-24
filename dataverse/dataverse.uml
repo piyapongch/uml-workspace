@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xmi:id="_rE-Q4Ku2EeOQ2-ZSfL1T7A" name="NewModel">
+  <ownedComment xmi:id="_INcc4K4dEeOW2PKNwp1xPA" annotatedElement="_rE-Q4Ku2EeOQ2-ZSfL1T7A">
+    <body>Dataverse Deployment Diagram</body>
+  </ownedComment>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_1o4-wKu6EeOQ2-ZSfL1T7A" client="_bCWlAKu6EeOQ2-ZSfL1T7A"/>
+  <packagedElement xmi:type="uml:Device" xmi:id="_RRpYkKu9EeOQ2-ZSfL1T7A" name="CentOS 6.5 VM">
+    <nestedClassifier xmi:type="uml:ExecutionEnvironment" xmi:id="_TzJMUKu6EeOQ2-ZSfL1T7A" name="Glassfish 3.1.2 Application Server">
+      <nestedClassifier xmi:type="uml:Artifact" xmi:id="_bCWlAKu6EeOQ2-ZSfL1T7A" clientDependency="_1o4-wKu6EeOQ2-ZSfL1T7A __atDcK3xEeOW2PKNwp1xPA _i5sEkK3yEeOW2PKNwp1xPA" name="DVN-web.war">
+        <manifestation xmi:id="_i5sEkK3yEeOW2PKNwp1xPA" name="manifest" client="_bCWlAKu6EeOQ2-ZSfL1T7A" supplier="_MPztoK3yEeOW2PKNwp1xPA" utilizedElement="_MPztoK3yEeOW2PKNwp1xPA"/>
+      </nestedClassifier>
+      <nestedClassifier xmi:type="uml:Component" xmi:id="_MPztoK3yEeOW2PKNwp1xPA" name="DVN-web"/>
+    </nestedClassifier>
+    <nestedNode xmi:type="uml:ExecutionEnvironment" xmi:id="_6GTzMKvkEeOUYoEgYVueaw" name="Rserve 1.8.0">
+      <nestedClassifier xmi:type="uml:Artifact" xmi:id="_NsAncKvlEeOUYoEgYVueaw" name="R 3.1.0 prerelease"/>
+    </nestedNode>
+    <nestedNode xmi:type="uml:ExecutionEnvironment" xmi:id="_W5tIsK3rEeOW2PKNwp1xPA" name="ImageMagick">
+      <nestedClassifier xmi:type="uml:Artifact" xmi:id="_IIuVwK3tEeOW2PKNwp1xPA" name="Command-line Tools"/>
+    </nestedNode>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Device" xmi:id="_h82xoKu9EeOQ2-ZSfL1T7A" name="CentOS 6.5 VM">
+    <nestedClassifier xmi:type="uml:ExecutionEnvironment" xmi:id="_DVc1YKu7EeOQ2-ZSfL1T7A" name="PostgreSQL 9.3.3"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_-Gpt4Ku9EeOQ2-ZSfL1T7A" name="JDBC" memberEnd="_-GqU8Ku9EeOQ2-ZSfL1T7A _-Gq8Aau9EeOQ2-ZSfL1T7A" navigableOwnedEnd="_-GqU8Ku9EeOQ2-ZSfL1T7A _-Gq8Aau9EeOQ2-ZSfL1T7A">
+    <ownedEnd xmi:id="_-GqU8Ku9EeOQ2-ZSfL1T7A" name="postgreSQL 9.3.3s" type="_DVc1YKu7EeOQ2-ZSfL1T7A" association="_-Gpt4Ku9EeOQ2-ZSfL1T7A">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_-GqU8au9EeOQ2-ZSfL1T7A"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_-Gq8AKu9EeOQ2-ZSfL1T7A" value="*"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_-Gq8Aau9EeOQ2-ZSfL1T7A" name="dVN-web.wars" type="_bCWlAKu6EeOQ2-ZSfL1T7A" association="_-Gpt4Ku9EeOQ2-ZSfL1T7A">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_-GrjEKu9EeOQ2-ZSfL1T7A"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_-GrjEau9EeOQ2-ZSfL1T7A" value="*"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_bGenEKxqEeOwSddP-LIAQA" name="TCP/IP" memberEnd="_bGhDUKxqEeOwSddP-LIAQA _bGi4gaxqEeOwSddP-LIAQA" navigableOwnedEnd="_bGhDUKxqEeOwSddP-LIAQA _bGi4gaxqEeOwSddP-LIAQA">
+    <ownedEnd xmi:id="_bGhDUKxqEeOwSddP-LIAQA" name="dVN-web.wars" type="_bCWlAKu6EeOQ2-ZSfL1T7A" association="_bGenEKxqEeOwSddP-LIAQA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_bGiRcKxqEeOwSddP-LIAQA"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_bGi4gKxqEeOwSddP-LIAQA" value="*"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_bGi4gaxqEeOwSddP-LIAQA" name="rs" type="_NsAncKvlEeOUYoEgYVueaw" association="_bGenEKxqEeOwSddP-LIAQA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_bGjfkKxqEeOwSddP-LIAQA"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_bGjfkaxqEeOwSddP-LIAQA" value="*"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Node" xmi:id="_UwFlYKxtEeOwSddP-LIAQA" name="Google Analytics Server">
+    <nestedNode xmi:type="uml:ExecutionEnvironment" xmi:id="_drOUYKxtEeOwSddP-LIAQA" name="Google Analytics REST WS"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Node" xmi:id="_hzzTUKxtEeOwSddP-LIAQA" name="EZID DOI Server">
+    <nestedNode xmi:type="uml:ExecutionEnvironment" xmi:id="_anck4KxuEeOwSddP-LIAQA" name="EZID API"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_vQzOgKxuEeOwSddP-LIAQA" name="TCP/IP - REST WS" memberEnd="_vQz1kKxuEeOwSddP-LIAQA _vQ0coKxuEeOwSddP-LIAQA" navigableOwnedEnd="_vQz1kKxuEeOwSddP-LIAQA _vQ0coKxuEeOwSddP-LIAQA">
+    <ownedEnd xmi:id="_vQz1kKxuEeOwSddP-LIAQA" name="dVN-web.wars" type="_bCWlAKu6EeOQ2-ZSfL1T7A" association="_vQzOgKxuEeOwSddP-LIAQA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_vQz1kaxuEeOwSddP-LIAQA"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_vQz1kqxuEeOwSddP-LIAQA" value="*"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_vQ0coKxuEeOwSddP-LIAQA" name="eZID APIs" type="_anck4KxuEeOwSddP-LIAQA" association="_vQzOgKxuEeOwSddP-LIAQA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_vQ0coaxuEeOwSddP-LIAQA"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_vQ0coqxuEeOwSddP-LIAQA" value="*"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="__UBagKxuEeOwSddP-LIAQA" name="TCP/IP - REST WS" memberEnd="__UCBkKxuEeOwSddP-LIAQA __UCooqxuEeOwSddP-LIAQA" navigableOwnedEnd="__UCBkKxuEeOwSddP-LIAQA __UCooqxuEeOwSddP-LIAQA">
+    <ownedEnd xmi:id="__UCBkKxuEeOwSddP-LIAQA" name="dVN-web.wars" type="_bCWlAKu6EeOQ2-ZSfL1T7A" association="__UBagKxuEeOwSddP-LIAQA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="__UCooKxuEeOwSddP-LIAQA"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="__UCooaxuEeOwSddP-LIAQA" value="*"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="__UCooqxuEeOwSddP-LIAQA" name="google Analytics Engines" type="_drOUYKxtEeOwSddP-LIAQA" association="__UBagKxuEeOwSddP-LIAQA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="__UDPsKxuEeOwSddP-LIAQA"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="__UDPsaxuEeOwSddP-LIAQA" value="*"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Device" xmi:id="_wCO-QK3pEeOW2PKNwp1xPA" name="Personal Computer">
+    <nestedNode xmi:type="uml:ExecutionEnvironment" xmi:id="_ysSwwK3pEeOW2PKNwp1xPA" name="Web Browser"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_hZczIK3tEeOW2PKNwp1xPA" name="exce convert command" memberEnd="_hZdaMK3tEeOW2PKNwp1xPA _hZeBQa3tEeOW2PKNwp1xPA" navigableOwnedEnd="_hZdaMK3tEeOW2PKNwp1xPA _hZeBQa3tEeOW2PKNwp1xPA">
+    <ownedEnd xmi:id="_hZdaMK3tEeOW2PKNwp1xPA" name="dVN-web.wars" type="_bCWlAKu6EeOQ2-ZSfL1T7A" association="_hZczIK3tEeOW2PKNwp1xPA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_hZdaMa3tEeOW2PKNwp1xPA"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_hZeBQK3tEeOW2PKNwp1xPA" value="*"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_hZeBQa3tEeOW2PKNwp1xPA" name="comand-line Toolss" type="_IIuVwK3tEeOW2PKNwp1xPA" association="_hZczIK3tEeOW2PKNwp1xPA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_hZeBQq3tEeOW2PKNwp1xPA"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_hZeoUK3tEeOW2PKNwp1xPA" value="*"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_qJczsK3uEeOW2PKNwp1xPA" name="HTTPS" memberEnd="_qJczsa3uEeOW2PKNwp1xPA _qJdawq3uEeOW2PKNwp1xPA" navigableOwnedEnd="_qJczsa3uEeOW2PKNwp1xPA _qJdawq3uEeOW2PKNwp1xPA">
+    <ownedEnd xmi:id="_qJczsa3uEeOW2PKNwp1xPA" name="web Browsers" type="_ysSwwK3pEeOW2PKNwp1xPA" association="_qJczsK3uEeOW2PKNwp1xPA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qJdawK3uEeOW2PKNwp1xPA"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qJdawa3uEeOW2PKNwp1xPA" value="*"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_qJdawq3uEeOW2PKNwp1xPA" name="dVN-web.wars" type="_bCWlAKu6EeOQ2-ZSfL1T7A" association="_qJczsK3uEeOW2PKNwp1xPA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qJeB0K3uEeOW2PKNwp1xPA"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qJeB0a3uEeOW2PKNwp1xPA" value="*"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="__atDcK3xEeOW2PKNwp1xPA" client="_bCWlAKu6EeOQ2-ZSfL1T7A"/>
+</uml:Model>
